@@ -1,0 +1,6 @@
+<h2 align="center">
+  <%= form_tag(welcome_index_path, method: :get) do %>
+    Word <%= text_field_tag :word, params[:word] %>
+    <%= submit_tag 'Search' %>
+  <% end %>
+</h2>

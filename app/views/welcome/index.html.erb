@@ -1,0 +1,14 @@
+<h2 align="center">Hello, There! Check out your articles!</h2>
+<h2 align="center"><%= link_to 'Articles', controller: 'articles' %></h2>
+<%= render 'form' %>
+
+<% if @articles != nil %>
+  <ul>
+    <% @articles.each do |article| %>
+      <% if article.frequency > 0 %>
+        <li> <%= "#{params[:word]}, #{article.frequency}, " %>
+         <%= link_to article.title, welcome_path(article) %> </li><br>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>
